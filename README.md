@@ -1,7 +1,7 @@
 # pokeget-rs (with Mega Pokemon support)
 A fork of [talwat/pokeget-rs](https://github.com/talwat/pokeget-rs) with added support for random mega pokemon.
 
-Yes i used claude to write ts
+Yes i used claude to write this read me
 
 ## New Features
 - `pokeget random-mega` — displays a random mega pokemon

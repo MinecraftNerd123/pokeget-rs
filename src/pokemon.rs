@@ -27,7 +27,7 @@ pub enum Region {
 pub enum Selection {
     /// When a random pokemon is selected (`0` or `random`).
     Random,
-
+    RandomMega,
     /// When a region is selected (e.g Kanto)
     Region(Region),
 
@@ -55,6 +55,7 @@ impl Selection {
         } else {
             match arg.to_lowercase().as_str() {
                 "random" => Selection::Random,
+		"random-mega" => Selection::RandomMega,
                 "kanto" => Selection::Region(Region::Kanto),
                 "johto" => Selection::Region(Region::Johto),
                 "hoenn" => Selection::Region(Region::Hoenn),
@@ -72,6 +73,7 @@ impl Selection {
     pub fn eval(self, list: &List) -> String {
         match self {
             Selection::Random => list.random(),
+	    Selection::RandomMega => list.random_mega(),
             Selection::Region(region) => list.get_by_region(region),
             Selection::DexId(id) => list
                 .get_by_id(id)

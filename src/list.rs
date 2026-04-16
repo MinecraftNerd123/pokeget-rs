@@ -89,4 +89,27 @@ impl List {
         let idx = rand::random_range(region);
         self.ids.get_by_left(&idx).unwrap().clone()
     }
+
+    pub fn random_mega(&self) -> String {
+        const MEGA_POKEMON: &[&str] = &[
+            "venusaur-mega", "charizard-mega-x", "charizard-mega-y",
+            "blastoise-mega", "alakazam-mega", "gengar-mega",
+            "kangaskhan-mega", "pinsir-mega", "gyarados-mega",
+            "aerodactyl-mega", "mewtwo-mega-x", "mewtwo-mega-y",
+            "ampharos-mega", "scizor-mega", "heracross-mega",
+            "houndoom-mega", "tyranitar-mega", "blaziken-mega",
+            "gardevoir-mega", "mawile-mega", "aggron-mega",
+            "medicham-mega", "manectric-mega", "banette-mega",
+            "absol-mega", "garchomp-mega", "lucario-mega",
+            "abomasnow-mega", "beedrill-mega", "pidgeot-mega",
+            "slowbro-mega", "steelix-mega", "sceptile-mega",
+            "swampert-mega", "sableye-mega", "sharpedo-mega",
+            "camerupt-mega", "altaria-mega", "glalie-mega",
+            "salamence-mega", "metagross-mega", "latias-mega",
+            "latios-mega", "rayquaza-mega", "lopunny-mega",
+            "gallade-mega", "audino-mega", "diancie-mega",
+        ];
+        let idx = rand::random_range(0..MEGA_POKEMON.len());
+        MEGA_POKEMON[idx].to_string()
+    }
 }
